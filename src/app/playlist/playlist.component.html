@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-4">
+    <i class="fas fa-compact-disc fa-4x"></i>
+    <h1 class="d-inline ml-3 display-4">Play List</h1>
+  </div>
+  <div class="col-md-6">
+    <div class="input-group mb-3 mt-4 mr-1">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        #searchPlay
+      />
+      <div class="input-group-append mr-2">
+        <button class="btn btn-info" (click)="onSearchPlay(searchPlay)">
+          <i class="fad fa-search"></i>
+        </button>
+      </div>
+
+  </div>
+  </div>
+  <div class="col-md-2  mb-3 mt-4">
+    <div *ngIf="searchMode" class="mt-1">
+      <button class="btn btn-outline-danger btn-sm" (click)="onSearchClose()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="!loading && playlist.length !==0">
+  <div class="col-md-4" *ngFor="let play of playlist; let i = index">
+    <div class="card mb-4 bg-secondary">
+      <a class="blur" data-toggle="modal" data-target="#playModal" (click)="playVideo(play.videoURL)">
+        <i class="fab fa-youtube fa-4x youtube-icon"></i>
+       <img [src]="play.imgURL" [alt]="play.title" class="img-fluid">
+      </a>
+        <div class="card-body">
+          <h3 class="card-title text-truncate">
+            {{ play.title }}
+          </h3>
+          <p class="lead text-truncate">
+            {{ play.desc }}
+          </p>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="!loading && playlist.length ===0" class="mt-5">
+  <div class="col text-center ">
+    <h3 class="display-4">No Video's Found </h3> <i class="far fa-frown fa-4x"></i>
+  </div>
+</div>
+
+<div class="row" *ngIf="loading">
+  <div class="col offset-6">
+    <div class="spinner">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade mt-5" id="playModal" (click) ="onClosePlayVideo()">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <!-- <button class="close bg-red mb-3" data-dismiss="modal" (click) ="onClosePlayVideo()">
+         <span>  &times; </span>
+        </button> -->
+
+        <iframe
+          height="350"
+          [src]="selctedPlay+'?autoplay=1' | safe: 'resourceUrl'"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          sandbox="allow-scripts allow-same-origin allow-presentation"
+          allowfullscreen
+          class="myFrame"
+
+        ></iframe>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />

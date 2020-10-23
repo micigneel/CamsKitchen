@@ -1,0 +1,13 @@
+
+.icon-group {
+  border-bottom: 1px solid #00FFFF;
+  /* border-top: 1px solid #00FFFF; */
+}
+
+.display-4 {
+  text-shadow: 2px 2px  !important;
+}
+
+.fa-fire{
+  color: red;
+}

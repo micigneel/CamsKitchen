@@ -1,0 +1,19 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.spinner {
+  padding-top: 90px;
+}
+
+.card {
+  height: 100%;
+}
+
+
+.f-icon {
+    color:  rgb(243, 243, 243);
+    background: #333;
+    border-radius : 5px;
+    padding: 5px;
+}

@@ -1,0 +1,13 @@
+
+<h3 class="text-center">Beta Map Development  & Testing</h3>
+
+<agm-map [latitude]="latitude" [longitude]="longtitude" (mapClick)="onChooseLocation($event)" [zoom]="15">
+    <agm-marker [latitude]="latitude" [longitude]="longtitude" >
+      <agm-info-window >
+        <h3 class="text-dark">Hi {{user}}</h3>
+        <p class="text-dark">How r u today</p>
+      </agm-info-window>
+    </agm-marker>
+</agm-map>
+
+

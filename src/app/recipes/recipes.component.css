@@ -1,0 +1,11 @@
+.h-style {
+  text-shadow: 0.5px 1px 1px  !important;
+}
+
+#recipe-header {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  border-radius: 15px;
+  padding: 10px;
+}
+

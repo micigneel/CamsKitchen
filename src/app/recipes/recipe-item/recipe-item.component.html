@@ -1,0 +1,24 @@
+<div class="mb-2">
+  <a
+  class="list-group-item clearfix bg-secondary text-white recipe-item"
+  [routerLink]="recipeIndex"
+  routerLinkActive
+>
+  <div class="row">
+    <div class="col-md-2">
+      <img
+        [src]="recipeItem.recipeMainImg"
+        [alt]="recipeItem.recipeTitle"
+        class="img-fluid img-control float-left mr-5"
+      />
+    </div>
+    <div class="col-md-10">
+      <h3>{{ recipeItem.recipeTitle }}</h3>
+      <p class="lead">
+        {{ recipeItem.recipeDesc }}
+      </p>
+    </div>
+  </div>
+</a>
+
+</div>

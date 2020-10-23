@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mb-3" id="recipe-header">
+    <div class="col-md-6  ml-0 pl-0">
+      <h4 class="h-style pt-2">
+        Selected Category : <strong>"{{ recipeCategory | uppercase}}"</strong>
+      </h4>
+    </div>
+    <div class="col-md-6">
+        <h4 class="float-right h-style">
+          Total Recipes : {{ recievedRecipes }}
+          <i class="fad fa-shish-kebab fa-2x  ml-2"></i>
+        </h4>
+    </div>
+  </div>
+
+
+  <app-recipe-list ></app-recipe-list>
+
+</div>

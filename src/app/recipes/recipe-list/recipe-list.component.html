@@ -1,0 +1,28 @@
+
+
+<div class="row" *ngIf="loading">
+  <div class="col offset-6">
+    <div class="spinner" >
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col" *ngIf="!loading">
+        <div *ngIf="recipes.length != 0; else elseBlock">
+            <div *ngFor="let recipe of recipes; let i = index" class="list-group">
+              <app-recipe-item [recipeItem]="recipe"  [recipeIndex]="i">
+              </app-recipe-item>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+              <h3 class="display-4"> No Recipes are available.</h3>
+        </ng-template>
+  </div>
+</div>
+
+<br>
+<br><br>
+
+

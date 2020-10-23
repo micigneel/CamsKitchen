@@ -1,0 +1,23 @@
+
+
+<div class="alert-drop" (click)="onClose()">
+  <div class="card  text-dark text-center">
+    <div class="card-header bg-danger text-white" *ngIf="type == 'error'">
+        <h3 class="card-title">Error Occured!</h3>
+    </div>
+    <div class="card-header bg-success text-white" *ngIf="type == 'success'">
+      <h3 class="card-title">Success</h3>
+  </div>
+    <div class="card-body">
+      <p class="card-text">
+        {{ message }}
+      </p>
+    </div>
+    <div class="card-footer" *ngIf="type != 'success'" >
+      <button class="btn btn-outline-info float-right" (click)="onClose()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+

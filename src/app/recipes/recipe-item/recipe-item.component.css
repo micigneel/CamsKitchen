@@ -1,0 +1,17 @@
+.img-control {
+  min-width: 60%;
+  min-height: 120px;
+}
+
+.recipe-item {
+    border : 1px solid #333;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    background:  rgba(50, 146, 166, 0.8);
+}
+
+a:hover {
+  background:  rgba(50, 146, 166, 0.8);
+  color: whitesmoke;
+}

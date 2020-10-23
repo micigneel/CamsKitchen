@@ -1,0 +1,32 @@
+.display-4 {
+  text-shadow: 2px 2px  !important;
+  color: cornsilk;
+}
+
+
+.fad{
+  color: darkgray;
+}
+
+.pagination {
+  background: grey;
+  border-radius: 0px;
+}
+
+.table{
+  border-radius: 20px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+
+#cart-header {
+  border-bottom: 1px solid cyan;
+}
+

@@ -1,0 +1,141 @@
+
+<header class="mb-5 pb-5">
+  <div class="container">
+    <div class="row" *ngIf="loading">
+      <div class="col offset-6">
+        <div class="spinner" >
+          <app-loading-spinner></app-loading-spinner>
+        </div>
+      </div>
+    </div>
+
+
+      <app-message-modal [message]="error"
+                         [type] = "messageType"
+                          *ngIf="!loading && error"
+                          (popupStatus)="onClose($event)"></app-message-modal>
+
+
+    <div class="row mt-3" *ngIf="!loading">
+
+      <div class="col-md-7">
+
+            <h4 class="display-4">
+              Discover your favorite <strong>Recipes</strong>
+            </h4>
+
+            <div class="d-flex">
+              <div class="px-4 py-2  align-self-start">
+                <i class="fad fa-taco fa-3x f-icon"></i>
+              </div>
+              <div class="px-4 py-2 align-self-end">
+                 <p>Get access to various mouth watering menu,
+                   Login and access 100+ of your favorite recipes.
+                 </p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="px-4 py-2 align-self-start">
+                <i class="fad fa-french-fries fa-3x f-icon"></i>
+              </div>
+              <div class="px-4 py-2 align-self-end">
+                 <p>Access to videos of your favorite choice.
+                    Easy, simple and phased steps for ur food.
+                 </p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="px-4 py-2 align-self-start">
+                <i class="fad fa-egg-fried fa-3x f-icon"></i>
+              </div>
+              <div class="px-4 py-2 align-self-end">
+                 <p>
+                   Free and Easy access to your collection.
+                   Go on a head and join our comunity for the love of food.
+                 </p>
+              </div>
+            </div>
+
+      </div>
+
+      <div class="col-md-5">
+
+        <div class="card  text-dark">
+          <h3 class="text-center my-2 ">
+            {{ isLoginMode ? 'Login' : 'Sign Up'}}
+            <i class="fas fa-burger-soda fa-2x" *ngIf="isLoginMode"></i>
+            <i class="far fa-burger-soda fa-2x" *ngIf="!isLoginMode"></i>
+          </h3>
+          <p class="lead text-center">
+            {{ isLoginMode ? 'Login' : 'Sign Up'}} to access your favorite recipes
+          </p>
+          <div class="card-body text-dark">
+            <form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                  ngModel
+                  required
+                  email
+                  #email="ngModel"
+                />
+
+                <small *ngIf="email.invalid && email.touched">
+                  Please enter a valid email
+                </small>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                  ngModel
+                  required
+                  minlength="6"
+                  #password="ngModel"
+                />
+
+                <small *ngIf="password.invalid && password.touched">
+                  Min Length of Password : 6
+                </small>
+              </div>
+
+              <button class="btn btn-success btn-block" [disabled]="formData.invalid">Login</button>
+            </form>
+          </div>
+
+          <div class="card-footer">
+              <button class="btn btn-outline-secondary float-sm-right" (click)="modeChange()">
+                <i class="fad fa-user-plus"></i>  {{ isLoginMode ? 'New User? Sign Up' : 'Login to Access Content'}}
+              </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- <section id="info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+</section> -->
+
+

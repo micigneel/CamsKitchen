@@ -1,0 +1,22 @@
+<div class="card text-light text-center bg-secondary mb-1">
+
+  <img
+      [src]="menuItem.image"
+      [alt]="menuItem.header"
+      class="img-fluid img-size">
+
+  <div class="card-body">
+    <div class="card-title">
+       <h3>{{ menuItem.header }}</h3>
+    </div>
+    <p class="card-text">
+      {{ menuItem.para }}
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn btn-outline-light btn-block" (click)="onCategoryAccess(menuItem.type)">
+      Click to Access Category
+    </button>
+  </div>
+</div>
