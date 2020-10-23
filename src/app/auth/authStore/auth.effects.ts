@@ -20,7 +20,10 @@ export interface AuthResponseData {
 
 @Injectable()
 export class AuthEffect {
-  key: string = 'AIzaSyBSxirdkFgcxfyHCG1Macsj8vN1MXu1QlA';
+
+  //Enter your Google Key
+  key: string = '';
+
   signUpURL: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.key;
   loginURL: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.key;
 

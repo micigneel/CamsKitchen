@@ -66,7 +66,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     NgxPaginationModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey : 'AIzaSyBSxirdkFgcxfyHCG1Macsj8vN1MXu1QlA'
+      apiKey : '' //Enter your Google Key
     })
   ],
   providers: [
